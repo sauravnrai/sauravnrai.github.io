@@ -26,8 +26,8 @@ class Document(HTMLParser):
     def __init__(self, text):
         super().__init__(convert_charrefs=True)
         self.links, self.assets, self.ids = [], [], set()
-        self.in_title = False
         self.in_head = False
+        self.in_title = False
         self.title = ''
         self.feed(text)
     def handle_starttag(self, tag, attrs):
@@ -35,13 +35,13 @@ class Document(HTMLParser):
         if a.get('id'): self.ids.add(a['id'])
         if tag == 'a' and a.get('name'): self.ids.add(a['name'])
         if tag == 'head': self.in_head = True
-        if tag == 'title': self.in_title = self.in_head
+        if tag == 'title' and self.in_head: self.in_title = True
         if tag == 'a' and a.get('href'): self.links.append(a['href'])
         if tag in ['script', 'img', 'iframe', 'audio', 'video', 'source'] and a.get('src'): self.assets.append(a['src'])
         if tag == 'link' and a.get('href') and set(a.get('rel', '').lower().split()) & {'stylesheet', 'icon', 'manifest', 'preload', 'modulepreload'}: self.assets.append(a['href'])
     def handle_endtag(self, tag):
-        if tag == 'head': self.in_head = False
         if tag == 'title': self.in_title = False
+        if tag == 'head': self.in_head = False
     def handle_data(self, text):
         if self.in_title: self.title += text
 
@@ -83,7 +83,7 @@ def browser_document(url, source):
         result = subprocess.run(command, capture_output=True, text=True, timeout=40)
     if result.returncode or '<html' not in result.stdout.lower(): raise AssertionError('Browser rendering failed: ' + url + '\n' + result.stderr[-1200:])
     doc = Document(result.stdout)
-    if doc.title.strip() != source.title.strip(): raise AssertionError('Browser did not render the expected page: ' + url + '; expected=' + repr(source.title.strip()) + '; actual=' + repr(doc.title.strip()))
+    if doc.title.strip() != source.title.strip(): raise AssertionError('Browser did not render the expected page: ' + url)
     print('BROWSER RENDER PASS ' + url, flush=True)
     return doc
 

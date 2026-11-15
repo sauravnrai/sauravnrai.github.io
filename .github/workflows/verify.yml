@@ -19,4 +19,6 @@ jobs:
           git fetch --depth=1 origin "${VERIFY_SHA}"
           git checkout --detach FETCH_HEAD
       - name: Verify live HTTP 200 responses, assets, browser-rendered links and existing tests
-        run: python3 verification/verify_network.py
+        run: |
+          python3 verification/test_document.py
+          python3 verification/verify_network.py
