@@ -5,11 +5,11 @@ permissions:
   contents: read
 jobs:
   verify:
-    name: HTTP 200, assets, rendered cross-links and regression tests
+    name: Batch 100 HTTP, links, offline browser flows and regression tests
     runs-on: ubuntu-latest
-    timeout-minutes: 10
+    timeout-minutes: 15
     steps:
-      - name: Fetch the exact verification commit without third-party actions
+      - name: Fetch exact owned verification commit without third-party Actions
         env:
           VERIFY_REPOSITORY: ${{ github.repository }}
           VERIFY_SHA: ${{ github.sha }}
@@ -18,7 +18,12 @@ jobs:
           git remote add origin "https://github.com/${VERIFY_REPOSITORY}.git"
           git fetch --depth=1 origin "${VERIFY_SHA}"
           git checkout --detach FETCH_HEAD
-      - name: Verify live HTTP 200 responses, assets, browser-rendered links and existing tests
+      - name: Verify live pages, assets, interlinks and regressions
         run: |
           python3 verification/test_document.py
           python3 verification/verify_network.py
+          python3 verification/batch100.py
+      - name: Exercise real browser flows without email-provider requests
+        run: |
+          node --experimental-websocket verification/browser.cjs
+          python3 verification/batch100.py --finalize
