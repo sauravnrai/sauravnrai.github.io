@@ -1,17 +1,1 @@
-{
-  "schemaVersion": 1,
-  "owner": "sauravnrai",
-  "updated": "2026-11-15",
-  "verification": "https://sauravnrai.github.io/verification/latest.json",
-  "sites": [
-    {"name":"App Network Hub","url":"https://sauravnrai.github.io/","repository":"sauravnrai.github.io"},
-    {"name":"Discovery","url":"https://sauravnrai.github.io/discovery/","repository":"discovery"},
-    {"name":"ASF Studio","url":"https://sauravnrai.github.io/ASF/","repository":"ASF"},
-    {"name":"ASF Analytics","url":"https://sauravnrai.github.io/ASF-analytics/","repository":"ASF-analytics"},
-    {"name":"ASF Visualizer","url":"https://sauravnrai.github.io/ASF-visualizer/","repository":"ASF-visualizer"}
-  ],
-  "guides": ["https://sauravnrai.github.io/ASF/guide.html","https://sauravnrai.github.io/ASF-analytics/guide.html","https://sauravnrai.github.io/ASF-visualizer/guide.html"],
-  "sourceOnlyProjects": ["browserstack_assignment","chatty","DACLP","Java-Codes","Multi-Threaded-Data-Ingestor","MySQL","Python-codes","shell-scripts","text-file-compressor-LZW"],
-  "runtimeDependencies": [],
-  "emailDelivery": "User-reviewed Gmail or mail-app drafts only; the visitor must click Send."
-}
+{"schemaVersion":2,"owner":"sauravnrai","updated":"2026-11-15","batch":100,"verification":"https://sauravnrai.github.io/verification/latest.json","sites":[{"name":"App Network Hub","url":"https://sauravnrai.github.io/","repository":"sauravnrai.github.io"},{"name":"Discovery","url":"https://sauravnrai.github.io/discovery/","repository":"discovery"},{"name":"ASF Studio","url":"https://sauravnrai.github.io/ASF/","repository":"ASF"},{"name":"ASF Analytics","url":"https://sauravnrai.github.io/ASF-analytics/","repository":"ASF-analytics"},{"name":"ASF Visualizer","url":"https://sauravnrai.github.io/ASF-visualizer/","repository":"ASF-visualizer"}],"guides":["https://sauravnrai.github.io/ASF/guide.html","https://sauravnrai.github.io/ASF-analytics/guide.html","https://sauravnrai.github.io/ASF-visualizer/guide.html"],"content":["https://sauravnrai.github.io/batch-100.html","https://sauravnrai.github.io/workflow.html","https://sauravnrai.github.io/discovery/guide.html","https://sauravnrai.github.io/discovery/examples.html","https://sauravnrai.github.io/ASF/batch-100.html","https://sauravnrai.github.io/ASF-analytics/batch-100.html","https://sauravnrai.github.io/ASF-visualizer/batch-100.html"],"sourceOnlyProjects":["browserstack_assignment","chatty","DACLP","Java-Codes","Multi-Threaded-Data-Ingestor","MySQL","Python-codes","shell-scripts","text-file-compressor-LZW"],"runtimeDependencies":[],"offline":"Discovery questionnaire and two guides after successful cache, with portable HTML alternative; other apps and email providers excluded.","emailDelivery":"User-reviewed Gmail or mail-app drafts only; visitor must click Send."}
