@@ -1,1 +1,51 @@
-{"status":"pending","verified":false,"message":"Live HTTP and browser checks have not yet completed. Build success is not live verification."}
+{
+  "schema_version": 1,
+  "status": "passed",
+  "verified": true,
+  "checked_at_utc": "2026-11-15T01:42:57.515536+00:00",
+  "run_url": "https://github.com/sauravnrai/sauravnrai.github.io/actions/runs/43664369509",
+  "verification_commit": "f40fe1f7f008634457d2e8dbfc55bd2f4748db76",
+  "counts": {"sites": 5, "html_pages": 9, "assets_and_supporting_resources": 20, "same_origin_link_edges": 76, "directed_cross_app_links": 20, "http_200_resources": 29, "unit_tests_passed": 28},
+  "pages": [
+    {"url": "https://sauravnrai.github.io/", "status": 200, "browser_render": "passed"},
+    {"url": "https://sauravnrai.github.io/discovery/", "status": 200, "browser_render": "passed"},
+    {"url": "https://sauravnrai.github.io/ASF/", "status": 200, "browser_render": "passed"},
+    {"url": "https://sauravnrai.github.io/ASF-analytics/", "status": 200, "browser_render": "passed"},
+    {"url": "https://sauravnrai.github.io/ASF-visualizer/", "status": 200, "browser_render": "passed"},
+    {"url": "https://sauravnrai.github.io/projects.html", "status": 200, "browser_render": "passed"},
+    {"url": "https://sauravnrai.github.io/ASF/guide.html", "status": 200, "browser_render": "passed"},
+    {"url": "https://sauravnrai.github.io/ASF-analytics/guide.html", "status": 200, "browser_render": "passed"},
+    {"url": "https://sauravnrai.github.io/ASF-visualizer/guide.html", "status": 200, "browser_render": "passed"}
+  ],
+  "assets_and_supporting_resources": {
+    "status": 200,
+    "urls": [
+      "https://sauravnrai.github.io/ASF-analytics/assets/app.js",
+      "https://sauravnrai.github.io/ASF-analytics/assets/data.js",
+      "https://sauravnrai.github.io/ASF-analytics/assets/navigation.js",
+      "https://sauravnrai.github.io/ASF-analytics/assets/network.css",
+      "https://sauravnrai.github.io/ASF-analytics/assets/styles.css",
+      "https://sauravnrai.github.io/ASF-analytics/data/sample.csv",
+      "https://sauravnrai.github.io/ASF-visualizer/assets/app.js",
+      "https://sauravnrai.github.io/ASF-visualizer/assets/data.js",
+      "https://sauravnrai.github.io/ASF-visualizer/assets/navigation.js",
+      "https://sauravnrai.github.io/ASF-visualizer/assets/network.css",
+      "https://sauravnrai.github.io/ASF-visualizer/assets/styles.css",
+      "https://sauravnrai.github.io/ASF-visualizer/data/sample.csv",
+      "https://sauravnrai.github.io/ASF/assets/app.js",
+      "https://sauravnrai.github.io/ASF/assets/data.js",
+      "https://sauravnrai.github.io/ASF/assets/navigation.js",
+      "https://sauravnrai.github.io/ASF/assets/network.css",
+      "https://sauravnrai.github.io/ASF/assets/styles.css",
+      "https://sauravnrai.github.io/ASF/data/sample.csv",
+      "https://sauravnrai.github.io/network.json",
+      "https://sauravnrai.github.io/verification/latest.json"
+    ]
+  },
+  "regression_tests": [
+    {"repository": "sauravnrai/ASF", "commit": "467d11b5d661c4a2c659b3088e48057ce304446e", "passed": 17},
+    {"repository": "sauravnrai/discovery", "commit": "3539d56d7cfa1dd616651214c967c2a670b942b3", "passed": 11}
+  ],
+  "failures": [],
+  "notes": ["Point-in-time verification; rerun the workflow after future changes.", "Browser checks cover rendered navigation. Existing unit tests cover scoring and draft construction; manual clipboard, download, accessibility and email-client behavior are not certified by this run.", "No email was sent or draft provider contacted."]
+}
