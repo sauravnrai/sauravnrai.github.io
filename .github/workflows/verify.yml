@@ -1,0 +1,22 @@
+name: Verify App Network
+on:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  verify:
+    name: HTTP 200, assets, rendered cross-links and regression tests
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Fetch the exact verification commit without third-party actions
+        env:
+          VERIFY_REPOSITORY: ${{ github.repository }}
+          VERIFY_SHA: ${{ github.sha }}
+        run: |
+          git init .
+          git remote add origin "https://github.com/${VERIFY_REPOSITORY}.git"
+          git fetch --depth=1 origin "${VERIFY_SHA}"
+          git checkout --detach FETCH_HEAD
+      - name: Verify live HTTP 200 responses, assets, browser-rendered links and existing tests
+        run: python3 verification/verify_network.py
